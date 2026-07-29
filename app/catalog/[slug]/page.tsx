@@ -44,21 +44,49 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <main>
+      <nav className="breadcrumbs" aria-label="Хлебные крошки">
+        <Link href="/">wonder me box</Link>
+        <span>/</span>
+        <Link href="/catalog">каталог</Link>
+        <span>/</span>
+        <span>{product.title}</span>
+      </nav>
       <section className="product-detail">
         <div className="product-detail__gallery">
-          {product.gallery.map((image, index) => (
-            <figure key={image}>
-              <img
-                src={image}
-                alt={index === 0 ? product.alt : `${product.title}, фото ${index + 1}`}
-              />
-            </figure>
-          ))}
+          <figure className="product-detail__main-image">
+            <img src={product.gallery[0]} alt={product.alt} />
+          </figure>
+          <div className="product-detail__thumbs" aria-label="Галерея набора">
+            {product.gallery.map((image, index) => (
+              <figure key={image}>
+                <img
+                  src={image}
+                  alt={index === 0 ? product.alt : `${product.title}, фото ${index + 1}`}
+                />
+              </figure>
+            ))}
+          </div>
         </div>
         <div className="product-detail__summary">
           <p className="eyebrow">{product.tag}</p>
           <h1>{product.title}</h1>
           <p className="product-detail__intro">{product.intro}</p>
+          <div className="product-detail__purchase">
+            <p className="product-detail__price">{product.price}</p>
+            <div className="hero__actions">
+              <a className="button button--primary" href={product.href}>
+                Купить на Wildberries
+              </a>
+              <Link className="button button--ghost" href="/contacts">
+                Нужна партия
+              </Link>
+            </div>
+            <ul className="promise-list" aria-label="Что уже включено">
+              <li>готовая подарочная упаковка</li>
+              <li>открытка и декоративная подача</li>
+              <li>быстрый заказ через Wildberries</li>
+            </ul>
+          </div>
           <div className="product-detail__meta" aria-label="Характеристики набора">
             <div>
               <span>Получатель</span>
@@ -72,15 +100,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <span>Тон</span>
               <strong>{product.tone}</strong>
             </div>
-          </div>
-          <p className="product-detail__price">{product.price}</p>
-          <div className="hero__actions">
-            <a className="button button--primary" href={product.href}>
-              Купить на Wildberries
-            </a>
-            <Link className="button button--ghost" href="/contacts">
-              Нужна партия
-            </Link>
           </div>
         </div>
       </section>

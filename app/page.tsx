@@ -23,6 +23,15 @@ const benefits = [
   ["1 день", "чтобы подобрать подарок без суеты"],
 ];
 
+const shopTabs = [
+  { label: "все", href: "/catalog" },
+  { label: "для нее", href: "/catalog#for-her" },
+  { label: "для него", href: "/catalog#for-him" },
+  { label: "сезон", href: "/catalog#season" },
+  { label: "благодарность", href: "/catalog#thanks" },
+  { label: "корпоративные", href: "/corporate" },
+];
+
 export default function Home() {
   return (
     <main>
@@ -89,18 +98,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--porcelain">
+      <section className="section shop-window">
         <div className="section__inner">
-          <div className="section__heading">
-            <div>
-              <p className="eyebrow">Новинки и хиты</p>
+          <div className="shop-window__top">
+            <nav className="shop-tabs" aria-label="Подборки каталога">
+              {shopTabs.map((tab, index) => (
+                <Link
+                  className={index === 0 ? "shop-tabs__item is-active" : "shop-tabs__item"}
+                  href={tab.href}
+                  key={tab.label}
+                >
+                  {tab.label}
+                </Link>
+              ))}
+            </nav>
+            <div className="shop-window__copy">
               <h2>Реальные наборы wonder me box</h2>
+              <p>
+                Готовые подарочные боксы с продуманной упаковкой, открыткой и
+                визуальным эффектом “можно дарить сразу”.
+              </p>
             </div>
-            <a className="text-link" href={site.wildberries}>
+            <a className="button button--outline" href={site.wildberries}>
               Все товары на WB
             </a>
           </div>
-          <div className="product-grid">
+          <div className="product-grid product-grid--showcase">
             {products.slice(0, 4).map((product) => (
               <ProductCard product={product} key={product.slug} />
             ))}

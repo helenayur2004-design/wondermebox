@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CategoryGrid, PageHero, ProductCard, RequestForm } from "../components";
 import { products, site } from "../content";
+import { CatalogFilters } from "./catalog-filters";
 
 export const metadata: Metadata = {
   title: "Каталог подарочных наборов wonder me box",
@@ -65,11 +66,7 @@ export default function CatalogPage() {
               Открыть бренд на Wildberries
             </a>
           </div>
-          <div className="product-grid product-grid--catalog">
-            {products.map((product) => (
-              <ProductCard product={product} key={product.slug} />
-            ))}
-          </div>
+          <CatalogFilters />
         </div>
       </section>
 

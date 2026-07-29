@@ -87,12 +87,15 @@ export function ProductCard({ product }: { product: Product }) {
     <article className="product-card">
       <Link className="product-card__visual" href={`/catalog/${product.slug}`}>
         <img src={product.image} alt={product.alt} />
-        <span>{product.tag}</span>
+        <div className="product-card__badges" aria-label="Метки набора">
+          <span>{product.tag}</span>
+          <span>{product.category}</span>
+        </div>
       </Link>
       <div className="product-card__body">
-        <p>{product.price}</p>
         <h3>{product.title}</h3>
-        <span>{product.description}</span>
+        <p className="product-card__description">{product.description}</p>
+        <p className="product-card__price">{product.price}</p>
         <div className="product-card__actions">
           <Link className="product-card__link" href={`/catalog/${product.slug}`}>
             Подробнее
