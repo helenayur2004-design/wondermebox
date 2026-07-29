@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { headers } from "next/headers";
+import { Footer, Header } from "./components";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,9 +14,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteTitle = "wonder me box — подарочные наборы";
+const siteTitle = "wonder me box — магазин подарочных наборов";
 const siteDescription =
-  "Готовые подарочные наборы wonder me box для женщин, мужчин, коллег, праздников и корпоративных заказов.";
+  "Многостраничный магазин подарочных наборов wonder me box: каталог, подборки, корпоративные заказы, доставка и быстрый заказ на Wildberries.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
@@ -69,7 +70,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
