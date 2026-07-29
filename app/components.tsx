@@ -4,20 +4,26 @@ import { categories, navigation, products, site, type Product } from "./content"
 export function Header() {
   return (
     <header className="site-header">
-      <Link className="brand" href="/" aria-label="wonder me box">
-        <span className="brand__mark">wm</span>
-        <span>wonder me box</span>
-      </Link>
-      <nav className="nav" aria-label="Главная навигация">
-        {navigation.map((item) => (
-          <Link href={item.href} key={item.href}>
-            {item.label}
-          </Link>
-        ))}
-      </nav>
-      <a className="header-action" href={site.wildberries}>
-        Купить на WB
-      </a>
+      <div className="site-header__bar">
+        <span>Подбор подарка под повод, бюджет и получателя</span>
+        <Link href="/contacts">Получить консультацию</Link>
+      </div>
+      <div className="site-header__main">
+        <Link className="brand" href="/" aria-label="wonder me box">
+          <span className="brand__mark">wm</span>
+          <span>wonder me box</span>
+        </Link>
+        <nav className="nav" aria-label="Главная навигация">
+          {navigation.map((item) => (
+            <Link href={item.href} key={item.href}>
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+        <a className="header-action" href={site.wildberries}>
+          Купить на WB
+        </a>
+      </div>
     </header>
   );
 }

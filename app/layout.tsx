@@ -1,17 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import { headers } from "next/headers";
 import { Footer, Header } from "./components";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const cormorant = Cormorant_Garamond({
+  variable: "--font-display",
+  subsets: ["cyrillic", "latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const montserrat = Montserrat({
+  variable: "--font-ui",
+  subsets: ["cyrillic", "latin"],
+  weight: ["400", "500", "600"],
 });
 
 const siteTitle = "wonder me box — магазин подарочных наборов";
@@ -57,7 +59,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#fff8f2",
+  themeColor: "#f8f8f6",
 };
 
 export default function RootLayout({
@@ -68,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${cormorant.variable} ${montserrat.variable} antialiased`}
       >
         <Header />
         {children}
