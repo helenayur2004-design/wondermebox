@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import { headers } from "next/headers";
+import { CartDrawer, CartProvider } from "./cart";
 import { Footer, Header } from "./components";
 import "./globals.css";
 
@@ -18,7 +19,7 @@ const montserrat = Montserrat({
 
 const siteTitle = "wonder me box — магазин подарочных наборов";
 const siteDescription =
-  "Многостраничный магазин подарочных наборов wonder me box: каталог, подборки, корпоративные заказы, доставка и быстрый заказ на Wildberries.";
+  "Многостраничный магазин подарочных наборов wonder me box: каталог готовых боксов, корзина без онлайн-оплаты, корпоративные заказы, доставка и контакты.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
@@ -59,7 +60,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#f8f8f6",
+  themeColor: "#fbf7ed",
 };
 
 export default function RootLayout({
@@ -72,9 +73,12 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${montserrat.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <CartProvider>
+          <Header />
+          {children}
+          <Footer />
+          <CartDrawer />
+        </CartProvider>
       </body>
     </html>
   );

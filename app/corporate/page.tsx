@@ -23,10 +23,16 @@ const options = [
 ];
 
 const process = [
-  "Вы присылаете повод, количество, бюджет и желаемую дату.",
-  "Мы предлагаем подборку наборов, цветовую подачу и варианты вложений.",
+  "Вы присылаете повод, количество, дату и пожелания к впечатлению.",
+  "Мы предлагаем подборку готовых наборов, цветовую подачу и варианты вложений.",
   "Согласовываем состав, упаковку, открытки и доставку.",
   "Готовим партию и передаем подарки к выбранной дате.",
+];
+
+const examples = [
+  "Подарки для команды",
+  "Наборы для клиентов",
+  "Сезонная партия с открытками",
 ];
 
 export default function CorporatePage() {
@@ -36,7 +42,7 @@ export default function CorporatePage() {
         eyebrow="Корпоративные подарки"
         title="Наборы для команды, клиентов и партнеров"
         text="Подарки могут быть готовыми к вручению и при этом не выглядеть безлично. Подберем состав, упаковку и тон поздравления под вашу задачу."
-        image="/products/men-gift-2.webp"
+        image="/products/05-lyubimomu-uchitelyu.webp"
         alt="Подарочные наборы wonder me box для корпоративного заказа"
       />
 
@@ -65,8 +71,9 @@ export default function CorporatePage() {
             <p className="eyebrow">Процесс</p>
             <h2>Берем на себя подбор, оформление и подготовку</h2>
             <p>
-              Можно отталкиваться от готовых наборов wonder me box или собрать
-              партию в нужной палитре. Самое важное: срок, количество и бюджет.
+              Можно отталкиваться от готовых наборов wonder me box и согласовать
+              упаковку, открытки, вложения и логистику. Самое важное: срок,
+              количество и повод.
             </p>
           </div>
           <ol className="process-list">
@@ -78,13 +85,36 @@ export default function CorporatePage() {
       </section>
 
       <section className="section">
+        <div className="section__inner">
+          <div className="section__heading">
+            <div>
+              <p className="eyebrow">Примеры заказов</p>
+              <h2>Здесь будут реальные выполненные партии</h2>
+            </div>
+            <p className="section-note">
+              Фото и описания добавим позже. Цены не выводим, потому что каждый
+              корпоративный заказ согласовывается индивидуально.
+            </p>
+          </div>
+          <div className="corporate-placeholders corporate-placeholders--light">
+            {examples.map((item) => (
+              <div key={item}>
+                <span>фото скоро</span>
+                <strong>{item}</strong>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--porcelain">
         <div className="section__inner contacts__grid">
           <div>
             <p className="eyebrow">Заявка для компании</p>
             <h2>Расскажите о партии подарков</h2>
             <p>
               В заявке можно написать только самое базовое: кому дарите, сколько
-              наборов нужно и какой бюджет удобен. Остальное уточним в ответе.
+              наборов нужно и к какой дате. Остальное уточним в ответе.
             </p>
           </div>
           <RequestForm />

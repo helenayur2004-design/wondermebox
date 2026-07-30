@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AddToCartButton, CartButton } from "./cart";
 import { categories, navigation, products, site, type Product } from "./content";
 
 export function Header() {
@@ -6,8 +7,8 @@ export function Header() {
     <header className="site-header">
       <div className="site-header__bar">
         <span>Бесплатная открытка в каждом наборе</span>
-        <span>Актуальная цена и заказ — на Wildberries</span>
-        <Link href="/contacts">Получить консультацию</Link>
+        <span>Заказ на сайте — заявкой без онлайн-оплаты</span>
+        <Link href="/delivery">Доставка и самовывоз</Link>
       </div>
       <div className="site-header__main">
         <Link className="brand" href="/" aria-label="wonder me box">
@@ -21,9 +22,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <a className="header-action" href={site.wildberries}>
-          Купить на WB
-        </a>
+        <CartButton />
       </div>
     </header>
   );
@@ -48,7 +47,10 @@ export function Footer() {
           ))}
         </nav>
         <div className="footer__contacts">
+          <a href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}>{site.phone}</a>
           <a href={`mailto:${site.email}`}>{site.email}</a>
+          <a href={site.telegram}>Telegram</a>
+          <a href={site.vk}>VK</a>
           <a href={site.wildberries}>Wildberries</a>
         </div>
       </div>
@@ -102,6 +104,9 @@ export function ProductCard({ product }: { product: Product }) {
         <p className="product-card__description">{product.description}</p>
         <p className="product-card__price">{product.price}</p>
         <div className="product-card__actions">
+          <AddToCartButton className="product-card__cart" product={product}>
+            В корзину
+          </AddToCartButton>
           <Link className="product-card__link" href={`/catalog/${product.slug}`}>
             Подробнее
           </Link>
@@ -172,7 +177,7 @@ export function RequestForm({ compact = false }: { compact?: boolean }) {
         Что подобрать?
         <textarea
           name="message"
-          placeholder="Например: 30 наборов для клиентов до 3 000 ₽"
+          placeholder="Например: 6 готовых наборов для коллег к празднику"
         />
       </label>
       <button type="submit">Отправить заявку</button>

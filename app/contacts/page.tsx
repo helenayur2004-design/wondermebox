@@ -11,20 +11,20 @@ export const metadata: Metadata = {
 
 const contactCards = [
   {
-    title: "Покупка готового набора",
-    text: "Откройте витрину бренда на Wildberries и выберите карточку с актуальными сроками.",
-    href: site.wildberries,
-    label: "Wildberries",
+    title: "Заказ через сайт",
+    text: "Добавьте готовые наборы в корзину и отправьте заявку без онлайн-оплаты.",
+    href: "/catalog",
+    label: "В каталог",
   },
   {
-    title: "Индивидуальный подбор",
-    text: "Напишите повод, бюджет и получателя. Ответим с подходящими вариантами.",
-    href: `mailto:${site.email}`,
-    label: site.email,
+    title: "Быстрый вопрос",
+    text: "Напишите нам в Telegram или VK, если нужно уточнить состав, дату или наличие.",
+    href: site.telegram,
+    label: `Telegram ${site.telegramLabel}`,
   },
   {
     title: "Корпоративный заказ",
-    text: "Укажите количество, дату вручения и пожелания к упаковке или открыткам.",
+    text: "Укажите количество, дату вручения и пожелания к упаковке или открыткам. Цены согласуем отдельно.",
     href: "/corporate",
     label: "Для компаний",
   },
@@ -36,8 +36,8 @@ export default function ContactsPage() {
       <PageHero
         eyebrow="Контакты"
         title="Поможем выбрать подарок без долгих поисков"
-        text="Расскажите, кому нужен набор, какой повод и бюджет. Для готовой покупки можно сразу перейти на Wildberries."
-        image="/products/teacher-woman-3.webp"
+        text="Расскажите, кому нужен набор, какой повод и к какой дате. Основной путь — корзина на сайте, Wildberries остается дополнительным вариантом."
+        image="/products/05-lyubimomu-uchitelyu.webp"
         alt="Подарочный набор wonder me box с открыткой и декором"
       />
 
@@ -71,8 +71,12 @@ export default function ContactsPage() {
               Для корпоративного заказа добавьте количество и желаемую дату.
             </p>
             <div className="contact-lines">
+              <a href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}>{site.phone}</a>
               <a href={`mailto:${site.email}`}>{site.email}</a>
-              <a href={site.wildberries}>wonder me box на Wildberries</a>
+              <a href={site.telegram}>Telegram: {site.telegramLabel}</a>
+              <a href={site.vk}>VK: {site.vkLabel}</a>
+              <span>Адрес самовывоза: {site.address}</span>
+              <a href={site.wildberries}>Wildberries как вариант покупки</a>
             </div>
           </div>
           <RequestForm />

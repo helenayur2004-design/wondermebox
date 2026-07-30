@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CategoryGrid, PageHero, ProductCard, RequestForm } from "../components";
-import { products, site } from "../content";
+import { products } from "../content";
 import { CatalogFilters } from "./catalog-filters";
 
 export const metadata: Metadata = {
@@ -14,9 +14,7 @@ const categorySections = [
     id: "for-her",
     title: "Для нее",
     text: "Нежные и праздничные наборы для мамы, подруги, коллеги, учителя или любимого человека.",
-    items: products.filter(
-      (product) => product.category === "для нее" || product.category === "self-care",
-    ),
+    items: products.filter((product) => product.category === "для нее"),
   },
   {
     id: "for-him",
@@ -27,14 +25,8 @@ const categorySections = [
   {
     id: "season",
     title: "Сезонные",
-    text: "Коллекции к Новому году, весенним праздникам и датам, когда подарок нужен быстро.",
-    items: products.filter((product) => product.category === "сезон"),
-  },
-  {
-    id: "thanks",
-    title: "Благодарность",
-    text: "Деликатные подарки для наставников, преподавателей, коллег и тех, кому хочется сказать спасибо.",
-    items: products.filter((product) => product.category === "благодарность"),
+    text: "Коллекции к Новому году, благодарности, Дню учителя и датам, когда подарок нужен быстро.",
+    items: products.filter((product) => product.category === "сезонные"),
   },
 ];
 
@@ -44,8 +36,8 @@ export default function CatalogPage() {
       <PageHero
         eyebrow="Каталог"
         title="Готовые подарочные наборы"
-        text="Выбирайте по получателю, поводу или настроению. У каждого набора есть отдельная карточка с составом, фото и быстрым переходом к покупке."
-        image="/products/holiday-box-1.webp"
+        text="Выбирайте по получателю, поводу или настроению. У каждого набора есть отдельная карточка с составом, ценой, фото и добавлением в корзину."
+        image="/products/04-dlya-vazhnogo-dnya.webp"
         alt="Подарочный набор wonder me box в коробке с праздничной лентой"
       />
 
@@ -62,9 +54,7 @@ export default function CatalogPage() {
               <p className="eyebrow">Все наборы</p>
               <h2>Витрина wonder me box</h2>
             </div>
-            <a className="text-link" href={site.wildberries}>
-              Открыть бренд на Wildberries
-            </a>
+            <p className="section-note">Основной сценарий — заказ через корзину без онлайн-оплаты.</p>
           </div>
           <CatalogFilters />
         </div>
@@ -93,10 +83,10 @@ export default function CatalogPage() {
         <div className="section__inner contacts__grid">
           <div>
             <p className="eyebrow">Не нашли точное попадание?</p>
-            <h2>Подберем набор под получателя и бюджет</h2>
+            <h2>Подскажем, какой готовый набор подойдет</h2>
             <p>
-              Напишите повод, количество и желаемую сумму. Мы предложим готовые
-              варианты или подскажем, какие боксы лучше подойдут.
+              Напишите повод, количество и дату. Мы предложим готовые варианты
+              или подскажем, какие боксы лучше подойдут.
             </p>
           </div>
           <RequestForm compact />

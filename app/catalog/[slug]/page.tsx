@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { AddToCartButton } from "../../cart";
 import { ProductCard, RequestForm } from "../../components";
 import { products, site } from "../../content";
 
@@ -74,17 +75,18 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <div className="product-detail__purchase">
             <p className="product-detail__price">{product.price}</p>
             <div className="hero__actions">
-              <a className="button button--primary" href={product.href}>
-                Купить на Wildberries
+              <AddToCartButton product={product}>В корзину</AddToCartButton>
+              <a className="button button--ghost" href={product.href}>
+                Купить на WB
               </a>
               <Link className="button button--ghost" href="/contacts">
-                Нужна партия
+                Задать вопрос
               </Link>
             </div>
             <ul className="promise-list" aria-label="Что уже включено">
               <li>готовая подарочная упаковка</li>
               <li>открытка и декоративная подача</li>
-              <li>быстрый заказ через Wildberries</li>
+              <li>заявка через сайт без онлайн-оплаты</li>
             </ul>
           </div>
           <div className="product-detail__meta" aria-label="Характеристики набора">
@@ -131,10 +133,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </article>
           <article>
             <span>02</span>
-            <h3>Быстрая покупка</h3>
+            <h3>Заказ через сайт</h3>
             <p>
-              Готовые позиции можно заказать на Wildberries, где видны
-              актуальная цена, сроки и пункты выдачи.
+              Добавьте набор в корзину и оставьте контакты. Мы подтвердим
+              наличие, дату и способ получения вручную.
             </p>
           </article>
           <article>
@@ -173,8 +175,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <p className="eyebrow">Подбор</p>
             <h2>Хотите похожий набор под конкретный повод?</h2>
             <p>
-              Опишите получателя, бюджет и дату. Подскажем, какие готовые боксы
-              подойдут или как собрать корпоративную партию.
+              Опишите получателя, повод и дату. Подскажем, какие готовые боксы
+              подойдут или как согласовать корпоративную партию.
             </p>
           </div>
           <RequestForm compact />

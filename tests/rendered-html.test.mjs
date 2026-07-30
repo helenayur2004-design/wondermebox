@@ -29,8 +29,10 @@ test("server-renders the wonder me box home page", async () => {
 
   const html = await response.text();
   assert.match(html, /wonder me box/i);
-  assert.match(html, /Перейти в каталог/);
+  assert.match(html, /В каталог/);
   assert.match(html, /Реальные наборы wonder me box/);
+  assert.match(html, /Каталог готовых наборов/);
+  assert.match(html, /корзину без онлайн-оплаты/);
   assert.doesNotMatch(html, /Codex is working|Your site is taking shape|react-loading-skeleton/);
 });
 
@@ -39,9 +41,10 @@ test("server-renders catalog and product pages", async () => {
   assert.equal(catalog.status, 200);
   assert.match(await catalog.text(), /Витрина wonder me box/);
 
-  const product = await render("/catalog/birthday-women");
+  const product = await render("/catalog/nezhny-kompliment");
   assert.equal(product.status, 200);
   const html = await product.text();
-  assert.match(html, /Женский набор на день рождения/);
-  assert.match(html, /Купить на Wildberries/);
+  assert.match(html, /Нежный комплимент/);
+  assert.match(html, /В корзину/);
+  assert.match(html, /Купить на WB/);
 });
