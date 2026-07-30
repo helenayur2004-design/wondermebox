@@ -81,6 +81,9 @@ export default function Home() {
               <ProductCard product={product} key={product.slug} />
             ))}
           </div>
+          <div className="shop-window__more">
+            <Link href="/catalog">Посмотреть ещё</Link>
+          </div>
         </div>
       </section>
 

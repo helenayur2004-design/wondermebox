@@ -93,15 +93,11 @@ export function ProductCard({ product }: { product: Product }) {
     <article className="product-card">
       <Link className="product-card__visual" href={`/catalog/${product.slug}`}>
         <img src={product.image} alt={product.alt} />
-        <div className="product-card__badges" aria-label="Метки набора">
-          <span>{product.tag}</span>
+        <div className="product-card__badges" aria-label="Категория набора">
           <span>{product.category}</span>
         </div>
       </Link>
       <div className="product-card__body">
-        <p className="product-card__meta">
-          {product.occasion} / {product.tone}
-        </p>
         <h3>{product.title}</h3>
         <p className="product-card__description">{product.description}</p>
         <p className="product-card__price">{product.price}</p>
@@ -110,11 +106,8 @@ export function ProductCard({ product }: { product: Product }) {
             В корзину
           </AddToCartButton>
           <Link className="product-card__link" href={`/catalog/${product.slug}`}>
-            Подробнее
+            Наполнение
           </Link>
-          <a className="product-card__link" href={product.href}>
-            WB
-          </a>
         </div>
       </div>
     </article>

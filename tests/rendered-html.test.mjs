@@ -32,7 +32,16 @@ test("server-renders the wonder me box home page", async () => {
   assert.match(html, /В каталог/);
   assert.match(html, />Главное</);
   assert.match(html, /Реальные наборы wonder me box/);
-  assert.match(html, /Нежный комплимент/);
+  assert.match(html, /Изумрудный платок/);
+  assert.match(html, /Посмотреть ещё/);
+  assert.match(html, /Наполнение/);
+  assert.doesNotMatch(html, />WB</);
+  assert.doesNotMatch(html, /product-card__meta/);
+  const badgeBlocks = html.match(/<div class="product-card__badges"[^>]*>.*?<\/div>/g) ?? [];
+  assert.equal(badgeBlocks.length, 6);
+  badgeBlocks.forEach((block) => {
+    assert.equal((block.match(/<span/g) ?? []).length, 1);
+  });
   assert.match(html, /Мы на маркетплейсах/);
   assert.match(html, /Яндекс Маркет/);
   assert.doesNotMatch(html, /Каталог готовых наборов/);
@@ -49,7 +58,7 @@ test("server-renders catalog and product pages", async () => {
   const product = await render("/catalog/nezhny-kompliment");
   assert.equal(product.status, 200);
   const html = await product.text();
-  assert.match(html, /Нежный комплимент/);
+  assert.match(html, /Изумрудный платок/);
   assert.match(html, /В корзину/);
   assert.match(html, /Купить на WB/);
 });

@@ -3471,3 +3471,110 @@ main,
   font-family: "Ony Mega Sans", var(--font-ui), Arial, sans-serif;
   font-weight: 400;
 }
+
+/* Product-card hierarchy */
+
+.product-card__badges span {
+  background: var(--blue);
+}
+
+.product-card__body {
+  min-height: 270px;
+  padding: 26px 24px 30px;
+}
+
+.product-card__price {
+  color: var(--ink);
+  font-size: 24px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  text-transform: none;
+}
+
+.product-card__actions {
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.product-card__cart {
+  min-height: 58px;
+  padding: 0 30px;
+  font-size: 14px;
+}
+
+.product-card__link {
+  display: inline-flex;
+  min-height: 58px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.product-card__link:hover {
+  border-color: var(--blue);
+  background: var(--blue);
+}
+
+.shop-window__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 58px;
+}
+
+.shop-window__more a {
+  display: inline-flex;
+  min-width: 340px;
+  min-height: 68px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ink);
+  border-radius: 4px;
+  padding: 0 34px;
+  background: var(--ink);
+  color: #fff;
+  font-family: "Ony Mega Sans", var(--font-ui), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease,
+    transform 160ms ease;
+}
+
+.shop-window__more a:hover {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 720px) {
+  .product-card__body {
+    min-height: auto;
+  }
+
+  .product-card__price {
+    font-size: 22px;
+  }
+
+  .product-card__cart,
+  .product-card__link {
+    min-height: 54px;
+    padding: 0 20px;
+    font-size: 13px;
+  }
+
+  .shop-window__more {
+    margin-top: 38px;
+  }
+
+  .shop-window__more a {
+    width: 100%;
+    min-width: 0;
+    min-height: 62px;
+  }
+}
