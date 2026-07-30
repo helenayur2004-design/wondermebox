@@ -44,6 +44,9 @@ test("server-renders the wonder me box home page", async () => {
   });
   assert.match(html, /Мы на маркетплейсах/);
   assert.match(html, /Яндекс Маркет/);
+  assert.match(html, /Самое новое — здесь/);
+  assert.match(html, /Смотреть новинки/);
+  assert.match(html, /\/catalog#catalog-products/);
   assert.doesNotMatch(html, /Каталог готовых наборов/);
   assert.match(html, /остальное мы берём на себя/);
   assert.doesNotMatch(html, /онлайн-оплаты сейчас/);
@@ -59,7 +62,9 @@ test("server-renders the wonder me box home page", async () => {
 test("server-renders catalog and product pages", async () => {
   const catalog = await render("/catalog");
   assert.equal(catalog.status, 200);
-  assert.match(await catalog.text(), /Витрина wonder me box/);
+  const catalogHtml = await catalog.text();
+  assert.match(catalogHtml, /Витрина wonder me box/);
+  assert.match(catalogHtml, /id="catalog-products"/);
 
   const product = await render("/catalog/nezhny-kompliment");
   assert.equal(product.status, 200);

@@ -55,6 +55,29 @@ export default function Home() {
         <HomeCarousel slides={heroImages} />
       </section>
 
+      <section className="novelty-band" aria-labelledby="novelty-title">
+        <div className="novelty-band__inner">
+          <div className="novelty-band__label">
+            <span>Новинки</span>
+            <span className="novelty-band__mark" aria-hidden="true">
+              ✦
+            </span>
+          </div>
+          <h2 id="novelty-title">Самое новое — здесь</h2>
+          <p>Новые наборы для неё, для него и особых поводов</p>
+          <Link
+            aria-label="Смотреть новинки в каталоге"
+            className="novelty-band__link"
+            href="/catalog#catalog-products"
+          >
+            <span className="novelty-band__arrow" aria-hidden="true">
+              →
+            </span>
+            <span>Смотреть новинки</span>
+          </Link>
+        </div>
+      </section>
+
       <section className="section shop-window">
         <div className="section__inner">
           <div className="product-grid product-grid--showcase">

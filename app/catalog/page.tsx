@@ -47,7 +47,7 @@ export default function CatalogPage() {
         </div>
       </section>
 
-      <section className="section section--porcelain">
+      <section className="section section--porcelain" id="catalog-products">
         <div className="section__inner">
           <div className="section__heading">
             <div>
