@@ -21,11 +21,7 @@ const heroImages = [
   },
 ];
 
-const corporatePlaceholders = [
-  "Партия для команды",
-  "Подарки клиентам",
-  "Брендированная упаковка",
-];
+const corporatePlaceholders = [1, 2, 3];
 
 export default function Home() {
   return (
@@ -74,7 +70,7 @@ export default function Home() {
 
       <section className="section corporate-band">
         <div className="section__inner corporate-band__grid">
-          <div>
+          <div className="corporate-band__copy">
             <p className="eyebrow">Корпоративным клиентам</p>
             <h2>Партии подарков согласовываем индивидуально</h2>
             <p>
@@ -90,7 +86,6 @@ export default function Home() {
             {corporatePlaceholders.map((item) => (
               <div key={item}>
                 <span>фото скоро</span>
-                <strong>{item}</strong>
               </div>
             ))}
           </div>

@@ -3578,3 +3578,60 @@ main,
     min-height: 62px;
   }
 }
+
+/* Corporate preview spacing */
+
+.corporate-band__copy {
+  display: grid;
+  align-content: start;
+}
+
+.corporate-band__copy .eyebrow {
+  margin: 0 0 30px;
+}
+
+.corporate-band__copy h2 {
+  max-width: 700px;
+  margin: 0;
+  line-height: 1.12;
+}
+
+.corporate-band__copy > p:not(.eyebrow) {
+  max-width: 650px;
+  margin: 30px 0 0;
+  line-height: 1.9;
+}
+
+.corporate-band__copy .button {
+  width: fit-content;
+  min-width: 330px;
+  min-height: 72px;
+  margin-top: 34px;
+  padding: 0 38px;
+  font-size: 16px;
+}
+
+.corporate-placeholders div {
+  align-content: start;
+}
+
+@media (max-width: 720px) {
+  .corporate-band__copy .eyebrow {
+    margin-bottom: 22px;
+  }
+
+  .corporate-band__copy h2 {
+    line-height: 1.08;
+  }
+
+  .corporate-band__copy > p:not(.eyebrow) {
+    margin-top: 24px;
+  }
+
+  .corporate-band__copy .button {
+    width: 100%;
+    min-width: 0;
+    min-height: 64px;
+    margin-top: 28px;
+  }
+}
