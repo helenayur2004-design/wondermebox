@@ -1,26 +1,24 @@
 import Link from "next/link";
 import { CategoryGrid, ProductCard, RequestForm } from "./components";
 import { products, reviews, site } from "./content";
+import { HomeCarousel } from "./home-carousel";
 
 const heroImages = [
   {
     src: "/products/01-nezhny-kompliment.webp",
     alt: "Женский подарочный набор wonder me box",
+    label: "нежный комплимент",
   },
   {
-    src: "/products/03-kofe-i-harakter.webp",
-    alt: "Мужской подарочный набор wonder me box",
+    src: "/products/classic-women-1.webp",
+    alt: "Лавандовый подарочный набор wonder me box",
+    label: "лавандовое настроение",
   },
   {
-    src: "/products/06-novogodniy-uyut.webp",
-    alt: "Новогодний подарочный набор wonder me box",
+    src: "/products/teacher-woman-2.webp",
+    alt: "Нежно-голубой подарочный набор wonder me box",
+    label: "нежно-голубая коллекция",
   },
-];
-
-const benefits = [
-  ["6", "готовых наборов"],
-  ["3", "основные категории"],
-  ["0", "онлайн-оплаты сейчас"],
 ];
 
 const orderChannels = [
@@ -49,53 +47,20 @@ export default function Home() {
     <main>
       <section className="home-hero">
         <div className="home-hero__content">
-          <p className="eyebrow">Готовые подарочные наборы</p>
-          <h1>wonder me box</h1>
+          <div className="hero-wordmark">
+            <h1>Wonder me box</h1>
+            <span className="hero-wordmark__gift" aria-hidden="true" />
+          </div>
           <p>
-            Боксы для нее, для него и сезонных поводов: с реальными фото,
-            готовой упаковкой, открыткой и понятным сценарием заказа через
-            корзину без онлайн-оплаты.
+            Готовые подарочные наборы, в которых уже всё продумано: наполнение,
+            упаковка и открытка. Выберите подарок для неё, для него или к особому
+            поводу — остальное мы берём на себя.
           </p>
-          <div className="hero__actions">
-            <Link className="button button--primary" href="/catalog">
-              В каталог
-            </Link>
-            <a className="button button--ghost" href={site.wildberries}>
-              Wildberries
-            </a>
-          </div>
-          <dl className="hero__facts" aria-label="Преимущества wonder me box">
-            {benefits.map(([value, label]) => (
-              <div key={value}>
-                <dt>{value}</dt>
-                <dd>{label}</dd>
-              </div>
-            ))}
-          </dl>
+          <a className="hero-marketplace-link" href={site.wildberries}>
+            Посмотреть на Wildberries
+          </a>
         </div>
-
-        <div className="home-hero__gallery" aria-label="Реальные наборы wonder me box">
-          <figure className="hero-card hero-card--focus">
-            <img src={heroImages[0].src} alt={heroImages[0].alt} />
-            <figcaption>для нее / для него / сезонные</figcaption>
-          </figure>
-          <div className="hero-stack">
-            {heroImages.slice(1).map((image) => (
-              <figure className="hero-card" key={image.src}>
-                <img src={image.src} alt={image.alt} />
-              </figure>
-            ))}
-            <div className="hero-note">
-              <span>pastel edit</span>
-              <p>сливочное масло, нежно-голубой, шалфейный и мягкий персик</p>
-            </div>
-          </div>
-          <div className="hero-marquee" aria-hidden="true">
-            <span>ready gift sets</span>
-            <span>wonder me box</span>
-            <span>no online payment</span>
-          </div>
-        </div>
+        <HomeCarousel slides={heroImages} />
       </section>
 
       <section className="brand-strip" aria-label="Быстрая навигация">

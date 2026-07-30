@@ -6,9 +6,12 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="site-header__main">
-        <Link className="brand" href="/" aria-label="wonder me box">
-          <span className="brand__mark">WMB</span>
-          <span>wonder me box</span>
+        <Link className="brand brand--header" href="/" aria-label="Wonder me box — на главную">
+          <img
+            className="brand__logo"
+            src="/brand/wonder-me-box-logo.jpg"
+            alt=""
+          />
         </Link>
         <nav className="nav" aria-label="Главная навигация">
           {navigation.map((item) => (
@@ -29,8 +32,12 @@ export function Footer() {
       <div className="footer__inner">
         <div>
           <Link className="brand" href="/" aria-label="wonder me box">
-            <span className="brand__mark">WMB</span>
-            <span>wonder me box</span>
+            <img
+              className="brand__logo brand__logo--footer"
+              src="/brand/wonder-me-box-logo.jpg"
+              alt=""
+            />
+            <span>Wonder me box</span>
           </Link>
           <p>Подарочные наборы для близких, команд и важных клиентов.</p>
         </div>
