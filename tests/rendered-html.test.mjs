@@ -33,6 +33,8 @@ test("server-renders the wonder me box home page", async () => {
   assert.match(html, />Главное</);
   assert.match(html, /Реальные наборы wonder me box/);
   assert.match(html, /Нежный комплимент/);
+  assert.match(html, /Мы на маркетплейсах/);
+  assert.match(html, /Яндекс Маркет/);
   assert.doesNotMatch(html, /Каталог готовых наборов/);
   assert.match(html, /остальное мы берём на себя/);
   assert.doesNotMatch(html, /онлайн-оплаты сейчас/);

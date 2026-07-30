@@ -269,7 +269,7 @@ h3 {
   display: grid;
   grid-template-columns: minmax(0, 0.96fr) minmax(320px, 0.78fr);
   gap: 52px;
-  align-items: center;
+  align-items: start;
   min-height: calc(100svh - 111px);
   padding: 72px max(22px, calc((100vw - 1440px) / 2 + 46px)) 62px;
   background: var(--paper);
@@ -3020,6 +3020,7 @@ body {
 
 .home-hero__content {
   max-width: 780px;
+  padding-top: 56px;
 }
 
 .hero-wordmark {
@@ -3059,6 +3060,65 @@ body {
   margin-top: 28px;
   font-size: 17px;
   line-height: 1.75;
+}
+
+.hero-marketplaces {
+  margin-top: 34px;
+}
+
+.hero-marketplaces > p {
+  margin: 0 0 14px;
+  color: var(--ink);
+  font-family: "Ony Mega Sans", var(--font-ui), Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.hero-marketplaces__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-marketplaces__links a {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 0 20px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Ony Mega Sans", var(--font-ui), Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.hero-marketplaces__links a:nth-child(1):hover {
+  border-color: var(--lavender);
+  background: var(--lavender);
+  transform: translateY(-2px);
+}
+
+.hero-marketplaces__links a:nth-child(2):hover {
+  border-color: var(--blue);
+  background: var(--blue);
+  transform: translateY(-2px);
+}
+
+.hero-marketplaces__links a:nth-child(3):hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+.hero-marketplaces__links span {
+  font-size: 16px;
 }
 
 .home-carousel {
@@ -3296,6 +3356,20 @@ body {
   .home-hero {
     padding-top: 34px;
     padding-bottom: 52px;
+  }
+
+  .home-hero__content {
+    padding-top: 0;
+  }
+
+  .hero-marketplaces {
+    margin-top: 26px;
+  }
+
+  .hero-marketplaces__links a {
+    min-height: 44px;
+    padding: 0 16px;
+    font-size: 12px;
   }
 
   .hero-wordmark {

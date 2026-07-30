@@ -7,9 +7,11 @@ export const site = {
   vkLabel: "vk.com/wondermebox",
   vk: "https://vk.com/wondermebox",
   address: "скоро появится",
-  wildberries:
-    "https://www.wildberries.ru/catalog/0/search.aspx?search=wonder+me+box",
-  ozon: "#",
+  wildberries: "https://www.wildberries.ru/brands/wonder-me-box",
+  ozon:
+    "https://www.ozon.ru/seller/wonder-me-box/?__rr=1&abt_att=1&origin_referer=yandex.ru",
+  yandexMarket:
+    "https://market.yandex.ru/business--wonder-me-box/1169272?clid=703&generalContext=t%3DshopInShop%3Bi%3D1%3Bbi%3D1169272%3B&searchContext=sins_ctx",
 };
 
 export const navigation = [

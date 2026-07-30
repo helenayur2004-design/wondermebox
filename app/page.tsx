@@ -28,7 +28,7 @@ const orderChannels = [
   },
   {
     title: "Маркетплейсы",
-    text: "Wildberries уже доступен как дополнительный вариант покупки. Ozon добавим позже.",
+    text: "Wildberries, Ozon и Яндекс Маркет доступны как дополнительные варианты покупки.",
   },
   {
     title: "Соцсети",
@@ -56,6 +56,20 @@ export default function Home() {
             упаковка и открытка. Выберите подарок для неё, для него или к особому
             поводу — остальное мы берём на себя.
           </p>
+          <div className="hero-marketplaces">
+            <p>Мы на маркетплейсах</p>
+            <div className="hero-marketplaces__links">
+              <a href={site.wildberries} target="_blank" rel="noreferrer">
+                Wildberries <span aria-hidden="true">↗</span>
+              </a>
+              <a href={site.ozon} target="_blank" rel="noreferrer">
+                Ozon <span aria-hidden="true">↗</span>
+              </a>
+              <a href={site.yandexMarket} target="_blank" rel="noreferrer">
+                Яндекс Маркет <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
         </div>
         <HomeCarousel slides={heroImages} />
       </section>
