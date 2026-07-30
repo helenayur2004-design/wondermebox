@@ -3020,7 +3020,7 @@ body {
 
 .home-hero__content {
   max-width: 780px;
-  padding-top: 56px;
+  padding-top: 0;
 }
 
 .hero-wordmark {
@@ -3063,14 +3063,14 @@ body {
 }
 
 .hero-marketplaces {
-  margin-top: 34px;
+  margin-top: 54px;
 }
 
 .hero-marketplaces > p {
   margin: 0 0 14px;
   color: var(--ink);
   font-family: "Ony Mega Sans", var(--font-ui), Arial, sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -3078,22 +3078,22 @@ body {
 .hero-marketplaces__links {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 14px;
 }
 
 .hero-marketplaces__links a {
   display: inline-flex;
-  min-height: 48px;
+  min-height: 58px;
   align-items: center;
   justify-content: center;
   gap: 12px;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
-  padding: 0 20px;
+  padding: 0 26px;
   background: var(--paper);
   color: var(--ink);
   font-family: "Ony Mega Sans", var(--font-ui), Arial, sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   white-space: nowrap;
   transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
@@ -3363,13 +3363,17 @@ body {
   }
 
   .hero-marketplaces {
-    margin-top: 26px;
+    margin-top: 34px;
+  }
+
+  .hero-marketplaces > p {
+    font-size: 14px;
   }
 
   .hero-marketplaces__links a {
-    min-height: 44px;
-    padding: 0 16px;
-    font-size: 12px;
+    min-height: 50px;
+    padding: 0 18px;
+    font-size: 13px;
   }
 
   .hero-wordmark {
