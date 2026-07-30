@@ -13,6 +13,7 @@ export const site = {
 };
 
 export const navigation = [
+  { label: "Главное", href: "/" },
   { label: "Каталог", href: "/catalog" },
   { label: "Корпоративные заказы", href: "/corporate" },
   { label: "Доставка", href: "/delivery" },

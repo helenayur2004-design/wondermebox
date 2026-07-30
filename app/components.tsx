@@ -6,13 +6,13 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="site-header__main">
-        <Link className="brand brand--header" href="/" aria-label="Wonder me box — на главную">
+        <div className="brand brand--header">
           <img
             className="brand__logo"
             src="/brand/wonder-me-box-logo.jpg"
-            alt=""
+            alt="Wonder me box"
           />
-        </Link>
+        </div>
         <nav className="nav" aria-label="Главная навигация">
           {navigation.map((item) => (
             <Link href={item.href} key={item.href}>
@@ -31,14 +31,14 @@ export function Footer() {
     <footer className="footer">
       <div className="footer__inner">
         <div>
-          <Link className="brand" href="/" aria-label="wonder me box">
+          <div className="brand">
             <img
               className="brand__logo brand__logo--footer"
               src="/brand/wonder-me-box-logo.jpg"
               alt=""
             />
             <span>Wonder me box</span>
-          </Link>
+          </div>
           <p>Подарочные наборы для близких, команд и важных клиентов.</p>
         </div>
         <nav className="footer__nav" aria-label="Навигация в подвале">
