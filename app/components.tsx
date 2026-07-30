@@ -5,11 +5,6 @@ import { categories, navigation, products, site, type Product } from "./content"
 export function Header() {
   return (
     <header className="site-header">
-      <div className="site-header__bar">
-        <span>Бесплатная открытка в каждом наборе</span>
-        <span>Заказ на сайте — заявкой без онлайн-оплаты</span>
-        <Link href="/delivery">Доставка и самовывоз</Link>
-      </div>
       <div className="site-header__main">
         <Link className="brand" href="/" aria-label="wonder me box">
           <span className="brand__mark">WMB</span>

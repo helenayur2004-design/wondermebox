@@ -2165,6 +2165,10 @@ body {
 }
 
 .home-hero {
+  align-items: start;
+  min-height: auto;
+  padding-top: clamp(34px, 4vw, 58px);
+  padding-bottom: clamp(56px, 7vw, 92px);
   background:
     linear-gradient(90deg, rgba(246, 217, 142, 0.18), rgba(184, 217, 231, 0.2) 60%, rgba(220, 234, 205, 0.3)),
     var(--paper);
