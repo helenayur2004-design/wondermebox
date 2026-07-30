@@ -50,6 +50,7 @@ test("server-renders the wonder me box home page", async () => {
   assert.doesNotMatch(html, /Где заказать/);
   assert.doesNotMatch(html, /Подарок должен выглядеть собранным/);
   assert.doesNotMatch(html, /Главное в наборе — момент/);
+  assert.doesNotMatch(html, /Нужна помощь с выбором/);
   assert.doesNotMatch(html, /Партия для команды|Подарки клиентам|Брендированная упаковка/);
   assert.match(html, /фото скоро/);
   assert.doesNotMatch(html, /Codex is working|Your site is taking shape|react-loading-skeleton/);

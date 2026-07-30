@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ProductCard, RequestForm } from "./components";
+import { ProductCard } from "./components";
 import { products, site } from "./content";
 import { HomeCarousel } from "./home-carousel";
 
@@ -92,25 +92,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section contacts-preview">
-        <div className="section__inner contacts__grid">
-          <div>
-            <p className="eyebrow">Заявка</p>
-            <h2>Нужна помощь с выбором?</h2>
-            <p>
-              Напишите, кому нужен подарок и к какой дате. Ответим с подходящими
-              готовыми наборами и уточним способ получения.
-            </p>
-            <div className="contact-lines">
-              <a href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}>{site.phone}</a>
-              <a href={`mailto:${site.email}`}>{site.email}</a>
-              <a href={site.telegram}>Telegram: {site.telegramLabel}</a>
-              <a href={site.vk}>VK: {site.vkLabel}</a>
-            </div>
-          </div>
-          <RequestForm compact />
-        </div>
-      </section>
     </main>
   );
 }
