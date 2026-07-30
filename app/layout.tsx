@@ -1,20 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Montserrat } from "next/font/google";
+import { Inter } from "next/font/google";
 import { headers } from "next/headers";
 import { CartDrawer, CartProvider } from "./cart";
 import { Footer, Header } from "./components";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const interDisplay = Inter({
   variable: "--font-display",
   subsets: ["cyrillic", "latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const montserrat = Montserrat({
+const interUi = Inter({
   variable: "--font-ui",
   subsets: ["cyrillic", "latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const siteTitle = "wonder me box — магазин подарочных наборов";
@@ -71,7 +71,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body
-        className={`${cormorant.variable} ${montserrat.variable} antialiased`}
+        className={`${interDisplay.variable} ${interUi.variable} antialiased`}
       >
         <CartProvider>
           <Header />
