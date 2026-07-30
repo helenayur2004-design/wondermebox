@@ -8,6 +8,22 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "Ony Mega Sans";
+  src: url("/fonts/OnyMegaSans-Regular.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Ony Mega Sans";
+  src: url("/fonts/OnyMegaSans-Medium.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
 :root {
   --paper: #f7f1e7;
   --porcelain: #ffffff;
@@ -3363,4 +3379,14 @@ main,
 
 .shop-window {
   padding-top: 54px;
+}
+
+.site-header .nav,
+.site-header .header-action {
+  font-family: "Ony Mega Sans", var(--font-ui), Arial, sans-serif;
+}
+
+.home-hero__content > p:not(.eyebrow) {
+  font-family: "Ony Mega Sans", var(--font-ui), Arial, sans-serif;
+  font-weight: 400;
 }
