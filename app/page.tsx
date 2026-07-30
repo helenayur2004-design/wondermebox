@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ProductCard, RequestForm } from "./components";
-import { products, reviews, site } from "./content";
+import { products, site } from "./content";
 import { HomeCarousel } from "./home-carousel";
 
 const heroImages = [
@@ -18,21 +18,6 @@ const heroImages = [
     src: "/products/teacher-woman-2.webp",
     alt: "Нежно-голубой подарочный набор wonder me box",
     label: "нежно-голубая коллекция",
-  },
-];
-
-const orderChannels = [
-  {
-    title: "На сайте",
-    text: "Добавьте набор в корзину, оставьте контакты, и мы подтвердим заказ вручную.",
-  },
-  {
-    title: "Маркетплейсы",
-    text: "Wildberries, Ozon и Яндекс Маркет доступны как дополнительные варианты покупки.",
-  },
-  {
-    title: "Соцсети",
-    text: "Telegram и VK оставляем для быстрых вопросов, уточнений и будущих заказов.",
   },
 ];
 
@@ -87,25 +72,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section order-section">
-        <div className="section__inner">
-          <div className="section__heading">
-            <div>
-              <p className="eyebrow">Где заказать</p>
-              <h2>Сайт — основной сценарий, маркетплейсы и соцсети — рядом</h2>
-            </div>
-          </div>
-          <div className="feature-grid">
-            {orderChannels.map((item) => (
-              <article key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section corporate-band">
         <div className="section__inner corporate-band__grid">
           <div>
@@ -126,42 +92,6 @@ export default function Home() {
                 <span>фото скоро</span>
                 <strong>{item}</strong>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--porcelain brand-story">
-        <div className="section__inner brand-story__grid">
-          <div>
-            <p className="eyebrow">О бренде</p>
-            <h2>Подарок должен выглядеть собранным еще до первой фразы</h2>
-          </div>
-          <div className="story-copy">
-            <p>
-              wonder me box собирает готовые подарочные наборы для ситуаций,
-              когда подарок нужен красивый, понятный и без долгого поиска. Мы
-              подбираем наполнение, упаковку и детали так, чтобы бокс выглядел
-              аккуратно уже в момент вручения.
-            </p>
-            <p>
-              Стиль сайта держим светлым и дружелюбным: сливочная база,
-              нежно-голубые и зеленые акценты, темный контраст для кнопок и
-              реальные фотографии наборов в центре внимания.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--porcelain">
-        <div className="section__inner reviews">
-          <div>
-            <p className="eyebrow">Впечатление</p>
-            <h2>Главное в наборе — момент, когда его открывают</h2>
-          </div>
-          <div className="review-grid">
-            {reviews.map((review) => (
-              <blockquote key={review}>{review}</blockquote>
             ))}
           </div>
         </div>
