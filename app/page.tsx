@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CategoryGrid, ProductCard, RequestForm } from "./components";
+import { ProductCard, RequestForm } from "./components";
 import { products, reviews, site } from "./content";
 import { HomeCarousel } from "./home-carousel";
 
@@ -58,30 +58,6 @@ export default function Home() {
           </p>
         </div>
         <HomeCarousel slides={heroImages} />
-      </section>
-
-      <section className="brand-strip" aria-label="Быстрая навигация">
-        <Link href="/catalog#for-her">для нее</Link>
-        <Link href="/catalog#for-him">для него</Link>
-        <Link href="/catalog#season">сезонные</Link>
-        <Link href="/corporate">корпоративным</Link>
-        <Link href="/delivery">доставка</Link>
-        <Link href="/contacts">контакты</Link>
-      </section>
-
-      <section className="section section--porcelain">
-        <div className="section__inner">
-          <div className="section__heading">
-            <div>
-              <p className="eyebrow">Категории</p>
-              <h2>Сначала выберите направление</h2>
-            </div>
-            <Link className="text-link" href="/catalog">
-              Смотреть каталог
-            </Link>
-          </div>
-          <CategoryGrid />
-        </div>
       </section>
 
       <section className="section shop-window">
