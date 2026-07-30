@@ -2969,7 +2969,8 @@ body {
   gap: 30px;
   margin: 0 auto;
   color: var(--ink);
-  font-size: 15px;
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .site-header .nav a {
@@ -2981,7 +2982,8 @@ body {
   min-width: 154px;
   min-height: 58px;
   padding: 0 28px;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .footer .brand > span {
@@ -3202,7 +3204,7 @@ body {
 
   .site-header .nav {
     gap: 18px;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .site-header .header-action {
