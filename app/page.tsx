@@ -46,11 +46,11 @@ export default function Home() {
       <section className="home-hero">
         <div className="home-hero__content">
           <p className="eyebrow">Подарочные наборы с готовой подачей</p>
-          <h1>Подарок, который выглядит как маленький праздник</h1>
+          <h1>Подарочная витрина без визуального шума</h1>
           <p>
             Wonder me box собирает продуманные подарочные боксы для дней
-            рождения, благодарности, сезонных праздников и корпоративных
-            вручений. Реальные наборы уже готовы к заказу на Wildberries.
+            рождения, благодарности, сезонных праздников и корпоративных задач.
+            Светлая подача, реальные фото и быстрый заказ на Wildberries.
           </p>
           <div className="hero__actions">
             <Link className="button button--primary" href="/catalog">
@@ -81,9 +81,9 @@ export default function Home() {
                 <img src={image.src} alt={image.alt} />
               </figure>
             ))}
-            <div className="hero-note">
-              <span>gift concierge</span>
-              <p>подбор под повод, бюджет и получателя</p>
+          <div className="hero-note">
+              <span>pastel edit</span>
+              <p>сливочный фон, голубой фарфор, шалфей и мягкий персик</p>
             </div>
           </div>
           <div className="hero-marquee" aria-hidden="true">
@@ -106,8 +106,8 @@ export default function Home() {
       <section className="section intro">
         <div className="section__inner intro__grid intro__grid--editorial">
           <div>
-            <p className="eyebrow">Brand edit</p>
-            <h2>Витрина, где подарок чувствуется до покупки</h2>
+            <p className="eyebrow">Pastel maude direction</p>
+            <h2>Большая спокойная витрина, где фото наборов остаются главными</h2>
           </div>
           <div className="editorial-copy">
             <p>

@@ -35,7 +35,7 @@ export function Footer() {
       <div className="footer__inner">
         <div>
           <Link className="brand" href="/" aria-label="wonder me box">
-            <span className="brand__mark">wm</span>
+            <span className="brand__mark">WMB</span>
             <span>wonder me box</span>
           </Link>
           <p>Подарочные наборы для близких, команд и важных клиентов.</p>
