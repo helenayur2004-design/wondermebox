@@ -3349,3 +3349,18 @@ body {
     height: 40px;
   }
 }
+
+/* Unified milk-white page surface */
+
+html,
+body,
+main,
+.home-hero,
+.shop-window {
+  background-color: #fffdf8;
+  background-image: none;
+}
+
+.shop-window {
+  padding-top: 54px;
+}

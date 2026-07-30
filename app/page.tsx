@@ -62,32 +62,6 @@ export default function Home() {
 
       <section className="section shop-window">
         <div className="section__inner">
-          <div className="shop-window__top">
-            <nav className="shop-tabs" aria-label="Подборки каталога">
-              <Link className="shop-tabs__item is-active" href="/catalog">
-                все
-              </Link>
-              <Link className="shop-tabs__item" href="/catalog#for-her">
-                для нее
-              </Link>
-              <Link className="shop-tabs__item" href="/catalog#for-him">
-                для него
-              </Link>
-              <Link className="shop-tabs__item" href="/catalog#season">
-                сезонные
-              </Link>
-            </nav>
-            <div className="shop-window__copy">
-              <h2>Каталог готовых наборов</h2>
-              <p>
-                У каждого бокса есть отдельная карточка с описанием, составом,
-                ценой и кнопкой добавления в корзину.
-              </p>
-            </div>
-            <Link className="button button--outline" href="/catalog">
-              Все наборы
-            </Link>
-          </div>
           <div className="product-grid product-grid--showcase">
             {products.map((product) => (
               <ProductCard product={product} key={product.slug} />

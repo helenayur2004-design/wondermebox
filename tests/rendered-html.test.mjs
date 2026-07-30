@@ -31,7 +31,8 @@ test("server-renders the wonder me box home page", async () => {
   assert.match(html, /wonder me box/i);
   assert.match(html, /В каталог/);
   assert.match(html, /Реальные наборы wonder me box/);
-  assert.match(html, /Каталог готовых наборов/);
+  assert.match(html, /Нежный комплимент/);
+  assert.doesNotMatch(html, /Каталог готовых наборов/);
   assert.match(html, /остальное мы берём на себя/);
   assert.doesNotMatch(html, /онлайн-оплаты сейчас/);
   assert.doesNotMatch(html, /Codex is working|Your site is taking shape|react-loading-skeleton/);
