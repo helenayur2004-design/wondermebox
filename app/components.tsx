@@ -5,12 +5,13 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="site-header__bar">
-        <span>Подбор подарка под повод, бюджет и получателя</span>
+        <span>Бесплатная открытка в каждом наборе</span>
+        <span>Актуальная цена и заказ — на Wildberries</span>
         <Link href="/contacts">Получить консультацию</Link>
       </div>
       <div className="site-header__main">
         <Link className="brand" href="/" aria-label="wonder me box">
-          <span className="brand__mark">wm</span>
+          <span className="brand__mark">WMB</span>
           <span>wonder me box</span>
         </Link>
         <nav className="nav" aria-label="Главная навигация">
@@ -70,13 +71,14 @@ export function PageHero({
 }) {
   return (
     <section className="page-hero">
-      <div>
+      <div className="page-hero__copy">
         <p className="eyebrow">{eyebrow}</p>
         <h1>{title}</h1>
         <p>{text}</p>
       </div>
       <figure>
         <img src={image} alt={alt} />
+        <figcaption className="page-hero__label">wonder me box / gift edit</figcaption>
       </figure>
     </section>
   );
@@ -93,6 +95,9 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
       </Link>
       <div className="product-card__body">
+        <p className="product-card__meta">
+          {product.occasion} / {product.tone}
+        </p>
         <h3>{product.title}</h3>
         <p className="product-card__description">{product.description}</p>
         <p className="product-card__price">{product.price}</p>
@@ -135,9 +140,10 @@ export function ProductRail({ title = "Популярные наборы" }: { t
 export function CategoryGrid() {
   return (
     <div className="category-grid">
-      {categories.map((category) => (
+      {categories.map((category, index) => (
         <Link className="category-card" href={category.href} key={category.title}>
           <img src={category.image} alt="" />
+          <small>{String(index + 1).padStart(2, "0")}</small>
           <span>{category.title}</span>
           <p>{category.description}</p>
         </Link>
