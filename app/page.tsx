@@ -56,9 +56,6 @@ export default function Home() {
             упаковка и открытка. Выберите подарок для неё, для него или к особому
             поводу — остальное мы берём на себя.
           </p>
-          <a className="hero-marketplace-link" href={site.wildberries}>
-            Посмотреть на Wildberries
-          </a>
         </div>
         <HomeCarousel slides={heroImages} />
       </section>

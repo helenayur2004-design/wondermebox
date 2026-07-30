@@ -14,7 +14,7 @@ export const site = {
 
 export const navigation = [
   { label: "Каталог", href: "/catalog" },
-  { label: "Корпоративным", href: "/corporate" },
+  { label: "Корпоративные заказы", href: "/corporate" },
   { label: "Доставка", href: "/delivery" },
   { label: "О бренде", href: "/about" },
   { label: "Контакты", href: "/contacts" },

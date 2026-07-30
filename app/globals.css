@@ -2097,7 +2097,7 @@ body {
 /* Pastel maude direction */
 
 :root {
-  --paper: #fbf7ed;
+  --paper: #fffdf8;
   --porcelain: #fffdf8;
   --mist: #e9f4f6;
   --soft: #fff1c9;
@@ -2124,7 +2124,7 @@ body {
 }
 
 .site-header {
-  background: rgba(251, 247, 237, 0.9);
+  background: rgba(255, 253, 248, 0.94);
 }
 
 .site-header__bar {
@@ -2938,7 +2938,9 @@ body {
 /* Home identity and carousel */
 
 .site-header__main {
-  min-height: 92px;
+  min-height: 118px;
+  grid-template-columns: 108px minmax(0, 1fr) auto;
+  gap: 42px;
 }
 
 .brand--header {
@@ -2946,8 +2948,8 @@ body {
 }
 
 .brand__logo {
-  width: 68px;
-  height: 68px;
+  width: 94px;
+  height: 94px;
   flex: 0 0 auto;
   border: 1px solid rgba(36, 35, 31, 0.16);
   border-radius: 50%;
@@ -2958,6 +2960,28 @@ body {
 .brand__logo--footer {
   width: 58px;
   height: 58px;
+}
+
+.site-header .nav {
+  width: 100%;
+  max-width: 850px;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 0 auto;
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.site-header .nav a {
+  padding: 18px 4px;
+  white-space: nowrap;
+}
+
+.site-header .header-action {
+  min-width: 154px;
+  min-height: 58px;
+  padding: 0 28px;
+  font-size: 13px;
 }
 
 .footer .brand > span {
@@ -2973,6 +2997,7 @@ body {
   align-items: center;
   padding-top: 48px;
   padding-bottom: 72px;
+  background: var(--paper);
 }
 
 .home-hero__content {
@@ -3002,13 +3027,13 @@ body {
   width: 72px;
   height: 72px;
   flex: 0 0 auto;
-  border: 1px solid rgba(36, 35, 31, 0.14);
-  border-radius: 50%;
-  background-color: #fff;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
   background-image: url("/brand/wonder-me-box-logo.jpg");
   background-position: center;
   background-size: 205%;
-  box-shadow: 0 14px 34px rgba(36, 35, 31, 0.08);
+  mix-blend-mode: multiply;
 }
 
 .home-hero__content > p:not(.eyebrow) {
@@ -3016,22 +3041,6 @@ body {
   margin-top: 28px;
   font-size: 17px;
   line-height: 1.75;
-}
-
-.hero-marketplace-link {
-  display: inline-block;
-  margin-top: 24px;
-  border-bottom: 1px solid var(--line-strong);
-  color: var(--muted);
-  font-family: var(--font-ui), Arial, sans-serif;
-  font-size: 12px;
-  line-height: 1.5;
-  transition: color 160ms ease, border-color 160ms ease;
-}
-
-.hero-marketplace-link:hover {
-  border-color: var(--ink);
-  color: var(--ink);
 }
 
 .home-carousel {
@@ -3128,29 +3137,31 @@ body {
 
 .home-carousel__catalog {
   position: absolute;
-  right: 20px;
+  right: auto;
   bottom: 20px;
+  left: 50%;
   z-index: 3;
   display: inline-flex;
-  min-width: 174px;
-  min-height: 54px;
+  min-width: 218px;
+  min-height: 62px;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(36, 35, 31, 0.12);
   border-radius: 999px;
-  padding: 0 24px;
+  padding: 0 30px;
   background: var(--sage);
   color: var(--ink);
   font-family: var(--font-ui), Arial, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
+  transform: translateX(-50%);
   transition: background 160ms ease, transform 160ms ease;
 }
 
 .home-carousel__catalog:hover {
   background: #c9ddb8;
-  transform: translateY(-2px);
+  transform: translate(-50%, -2px);
 }
 
 .home-carousel__dots {
@@ -3179,6 +3190,26 @@ body {
 }
 
 @media (max-width: 1180px) {
+  .site-header__main {
+    grid-template-columns: 92px minmax(0, 1fr) auto;
+    gap: 24px;
+  }
+
+  .brand__logo {
+    width: 82px;
+    height: 82px;
+  }
+
+  .site-header .nav {
+    gap: 18px;
+    font-size: 13px;
+  }
+
+  .site-header .header-action {
+    min-width: 132px;
+    padding: 0 20px;
+  }
+
   .home-hero {
     gap: 42px;
   }
@@ -3194,6 +3225,18 @@ body {
 }
 
 @media (max-width: 900px) {
+  .site-header__main {
+    grid-template-columns: 1fr auto;
+    gap: 0 20px;
+  }
+
+  .site-header .nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
   .home-hero {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -3213,6 +3256,23 @@ body {
   .brand__logo {
     width: 52px;
     height: 52px;
+  }
+
+  .site-header .nav {
+    max-width: none;
+    gap: 22px;
+    font-size: 12px;
+  }
+
+  .site-header .nav a {
+    padding: 8px 0 13px;
+  }
+
+  .site-header .header-action {
+    min-width: 0;
+    min-height: 42px;
+    padding: 0 15px;
+    font-size: 11px;
   }
 
   .home-hero {
@@ -3262,12 +3322,13 @@ body {
   }
 
   .home-carousel__catalog {
-    right: 14px;
+    right: auto;
     bottom: 14px;
-    min-width: 142px;
-    min-height: 48px;
+    left: 50%;
+    min-width: 172px;
+    min-height: 52px;
     padding: 0 18px;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .home-carousel__dots {

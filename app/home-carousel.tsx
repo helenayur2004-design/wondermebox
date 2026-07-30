@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type CarouselSlide = {
   src: string;
@@ -11,6 +11,19 @@ type CarouselSlide = {
 
 export function HomeCarousel({ slides }: { slides: CarouselSlide[] }) {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused || slides.length < 2) {
+      return;
+    }
+
+    const interval = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length);
+    }, 4500);
+
+    return () => window.clearInterval(interval);
+  }, [isPaused, slides.length]);
 
   const showPrevious = () => {
     setActiveSlide((current) => (current - 1 + slides.length) % slides.length);
@@ -21,7 +34,14 @@ export function HomeCarousel({ slides }: { slides: CarouselSlide[] }) {
   };
 
   return (
-    <figure className="home-carousel" aria-label="Реальные наборы wonder me box">
+    <figure
+      className="home-carousel"
+      aria-label="Реальные наборы wonder me box"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocusCapture={() => setIsPaused(true)}
+      onBlurCapture={() => setIsPaused(false)}
+    >
       <div
         className="home-carousel__track"
         style={{ transform: `translateX(-${activeSlide * 100}%)` }}
