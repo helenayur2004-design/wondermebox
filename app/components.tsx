@@ -13,13 +13,28 @@ export function Header() {
             alt="Wonder me box"
           />
         </div>
-        <nav className="nav" aria-label="Главная навигация">
+        <nav className="nav nav--desktop" aria-label="Главная навигация">
           {navigation.map((item) => (
             <Link href={item.href} key={item.href}>
               {item.label}
             </Link>
           ))}
         </nav>
+        <details className="mobile-menu">
+          <summary>
+            <span className="mobile-menu__icon" aria-hidden="true">
+              ☰
+            </span>
+            <span>Меню</span>
+          </summary>
+          <nav className="mobile-menu__nav" aria-label="Мобильная навигация">
+            {navigation.map((item) => (
+              <Link href={item.href} key={item.href}>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </details>
         <CartButton />
       </div>
     </header>

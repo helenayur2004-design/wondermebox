@@ -31,6 +31,8 @@ test("server-renders the wonder me box home page", async () => {
   assert.match(html, /wonder me box/i);
   assert.match(html, /В каталог/);
   assert.match(html, />Главное</);
+  assert.match(html, /class="mobile-menu"/);
+  assert.match(html, /Мобильная навигация/);
   assert.match(html, /Реальные наборы wonder me box/);
   assert.match(html, /Изумрудный платок/);
   assert.match(html, /Посмотреть ещё/);
@@ -72,4 +74,19 @@ test("server-renders catalog and product pages", async () => {
   assert.match(html, /Изумрудный платок/);
   assert.match(html, /В корзину/);
   assert.match(html, /Купить на WB/);
+});
+
+test("server-renders every public page for mobile navigation", async () => {
+  const routes = ["/about", "/contacts", "/corporate", "/delivery"];
+
+  for (const route of routes) {
+    const response = await render(route);
+    assert.equal(response.status, 200, route);
+    const html = await response.text();
+    assert.match(html, /Мобильная навигация/, route);
+    assert.match(html, /Корпоративные заказы/, route);
+    assert.match(html, /Доставка/, route);
+    assert.match(html, /О бренде/, route);
+    assert.match(html, /Контакты/, route);
+  }
 });
